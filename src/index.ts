@@ -71,7 +71,12 @@ export const extractFromHTML = (html: string) => {
 
 // extracts metadata from a URL
 export const extractFromUrl = async (url: string) => {
-  const response = await fetch(url);
+  // construct CORS header options
+  const headers = new Headers();
+  headers.append("Content-Type", "text/html");
+  headers.append("Access-Control-Allow-Origin", "*");
+
+  const response = await fetch(url, { headers });
   if (!response.ok) {
     return null;
   }

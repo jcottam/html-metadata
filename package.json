@@ -1,0 +1,49 @@
+{
+  "name": "@jcottam/html-metadata",
+  "description": "This module module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs.",
+  "version": "1.0.0",
+  "author": "John Ryan Cottam <https//www.johnryancottam.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcottam/html-metadata.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcottam/html-metadata/issues"
+  },
+  "homepage": "https://github.com/jcottam/html-metadata#readme",
+  "keywords": [],
+  "scripts": {
+    "build": "rm -rf dist && rollup --config",
+    "test": "jest",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "release-it": "^17.2.1",
+    "rollup": "^4.17.2",
+    "ts-jest": "^29.1.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

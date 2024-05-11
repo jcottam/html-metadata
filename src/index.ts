@@ -73,7 +73,7 @@ export const extractFromHTML = (html: string) => {
 export const extractFromUrl = async (url: string) => {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}`);
+    return null;
   }
   const html = await response.text();
   return extractFromHTML(html);

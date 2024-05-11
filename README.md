@@ -2,7 +2,7 @@
 
 <!-- ![test coverage](https://img.shields.io/badge/tests-100%-brightgreen) -->
 
-<!-- [![npm](https://img.shields.io/npm/v/html-metadata.svg)](https://www.npmjs.com/package/html-metadata) -->
+<!-- [![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata.svg)](https://www.npmjs.com/package/@jcottam/html-metadata) -->
 
 [![license](https://img.shields.io/badge/license-ISC-yellow)](https://en.wikipedia.org/wiki/ISC_license)
 [![developed by](https://img.shields.io/badge/developed_by-noteworthy.solutions-purple)](http://www.johnryancottam.com)

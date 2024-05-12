@@ -5,18 +5,19 @@ export type Options = {
   metaTags?: string[]; // list of meta tags to extract
 };
 
-const formatKeys = (obj: any) => {
-  return Object.keys(obj).reduce((acc: any, key: string) => {
-    acc[key.replace(":", "_")] = obj[key];
-    return acc;
-  }, {});
+export type ExtractedData = {
+  [key: string]: string;
 };
 
-// extracts metadata from an HTML string
-export const extractFromHTML = (html: string, options?: Options) => {
+// extracts metadata from an HTML string, returns an object of key-value pairs
+export const extractFromHTML = (
+  html: string,
+  options?: Options
+): ExtractedData => {
   const $ = cheerio.load(html);
   const output: any = {};
-  const meta = $("meta").toArray();
+  const meta = $("meta").toArray() || undefined;
+  output.title = $("title").text() || undefined;
   output.favicon = $('link[rel="icon"]').attr("href");
   meta.forEach((tag: any) => {
     const name = $(tag).attr("name");
@@ -32,14 +33,17 @@ export const extractFromHTML = (html: string, options?: Options) => {
       }
       return acc;
     }, {});
-    return formatKeys(filteredOutput);
+    return filteredOutput;
   }
 
-  return formatKeys(output);
+  return output;
 };
 
 // extracts metadata from a URL
-export const extractFromUrl = async (url: string, options?: Options) => {
+export const extractFromUrl = async (
+  url: string,
+  options?: Options
+): Promise<ExtractedData | null> => {
   return new Promise((resolve, reject) => {
     if (options?.timeout) {
       setTimeout(() => {

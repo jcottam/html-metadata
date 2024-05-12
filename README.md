@@ -25,37 +25,43 @@ To report a bug or request a feature please open an issue or pull request in Git
 
 ## Methods
 
-- extractFromHTML
-- extractFromUrl
+```
+extractFromHTML: (html: string, options?: Options) => ExtractedData
+```
+
+```
+extractFromUrl: (url: string, options?: Options) => Promise<ExtractedData | null>
+```
 
 ## Types
 
-## Returns
+```
+type Options = {
+  timeout?: number;
+  metaTags?: string[];
+};
 
-- meta tags
-- favicons
-- citations, per the Google Scholar spec
-- Open Graph Protocol (og:) Tags
-- Twitter Card Tags
-- JSON-LD
-- h1-h6 tags
-- img tags
-- automatic charset detection & decoding (optional)
-- the full response body as a string of html (optional)
+type ExtractedData = {
+  [key: string]: string;
+};
+```
+
+## Example Response
 
 ```
-<link rel="apple-touch-icon" href="" sizes="" type="">
-<link rel="icon" href="" sizes="" type="">
-<meta name="author" content="">
-<link rel="author" href="">
-<link rel="canonical" href="">
-<meta name ="description" content="">
-<link rel="publisher" href="">
-<meta name ="robots" content="">
-<link rel="shortlink" href="">
-<title></title>
-<html lang="en">
-<html dir="rtl">
+{
+  "og:type": "website",
+  "og:url": "https://retool.com/",
+  "og:title": "Retool | The fastest way to build internal software.",
+  "og:description": "Retool is the fastest way to build internal software. Use Retool's building blocks to build apps and workflow automations that connect to your databases and APIs, instantly.",
+  "og:image": "https://d3399nw8s4ngfo.cloudfront.net/og-image-default.webp",
+  "favicon": "/favicon.png",
+  "twitter:card": "summary_large_image",
+  "twitter:creator": "@retool",
+  "twitter:title": "Retool | The fastest way to build internal software.",
+  "twitter:description": "Retool is the fastest way to build internal software. Use Retool's building blocks to build apps and workflow automations that connect to your databases and APIs, instantly.",
+  "twitter:image": "https://d3399nw8s4ngfo.cloudfront.net/og-image-default.webp"
+}
 ```
 
 ## Installation

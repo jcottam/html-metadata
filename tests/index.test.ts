@@ -4,13 +4,12 @@ import { Options } from "../src/index";
 
 describe("extractFromUrl", () => {
   test("return metadata", async () => {
-    // const url = "https://www.alpine-suites.com";
-    const url =
-      "https://medium.com/@thebusinessbench0/how-can-the-best-ai-tools-drive-unmatched-efficiency-in-your-brand-strategy-40f52181447e";
+    const url = "https://retool.com";
     const options: Options = {
       metaTags: ["title", "favicon", "og:title", "og:description", "og:image"],
     };
     const data = await extractFromUrl(url, options);
+    console.log("data: ", data);
     expect(data).toBeInstanceOf(Object);
     expect(data).not.toBeNull();
   });
@@ -26,10 +25,9 @@ describe("extractFromHTML", () => {
     const data = extractFromHTML(
       "<html><head><meta property='og:title' content='Hello World' /><meta property='og:description' content='This is a test' /></head></html>"
     );
-    console.log("data: ", data);
     expect(data).toEqual({
-      og_title: "Hello World",
-      og_description: "This is a test",
+      "og:title": "Hello World",
+      "og:description": "This is a test",
     });
   });
 });

@@ -72,8 +72,8 @@ extractFromUrl: (url: string, options?: Options) =>
 
 ```ts
 type Options = {
-  timeout?: number
-  metaTags?: string[]
+  timeout?: number // fetch timeout in milliseconds
+  metaTags?: string[] // list of meta tags to extract
 }
 
 type ExtractedData = {

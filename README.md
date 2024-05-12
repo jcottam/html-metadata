@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata)](https://www.npmjs.com/package/@jcottam/html-metadata)
 [![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/ISC_license)
-[![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.javascriptjohnny.com)
+[![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.johnryancottam.com)
 
 The `@jcottam/html-metadata` module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs. These tags provide structured metadata for webpages, particularly useful for social media sharing and SEO. Both tags improve visibility and appearance on social media and search engines.
 
@@ -19,7 +19,7 @@ To report a bug or request a feature please open an issue or pull request in Git
 - Works in both Node.js and browser environments
 - Written in TypeScript for type safety
 - Extract HTML Meta and OpenGraph tags from HTML or URLs
-- Parse and retrieve metadata like `og:title`, `og:description`, `og:image`, etc.
+- Parse and retrieve metadata like `og:title`, `og:description`, `og:image`, `favicon`, `title`, etc.
 - Easy integration into web applications
 - Support for error handling and customization
 

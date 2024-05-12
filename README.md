@@ -23,19 +23,52 @@ To report a bug or request a feature please open an issue or pull request in Git
 - Easy integration into web applications
 - Support for error handling and customization
 
-## Methods
+## Installation
 
-```
-extractFromHTML: (html: string, options?: Options) => ExtractedData
-```
-
-```
-extractFromUrl: (url: string, options?: Options) => Promise<ExtractedData | null>
+```sh
+npm install @jcottam/html-metadata
 ```
 
-## Types
+## Usage
 
+**_ES6 and CommonJS syntax supported. Examples below are in CommonJS syntax._**
+
+### Extract tags from a URL
+
+```ts
+const { extractFromUrl } = require("@jcottam/html-metadata");
+
+extractFromUrl("https://www.yahoo.com").then((data) => console.log(data));
 ```
+
+### Extract tags from an HTML string
+
+Useful in serverless environments like Cloudflare Workers where server-side fetches and `Response` objects are at play.
+
+```ts
+const { extractFromHTML } = require("@jcottam/html-metadata");
+
+const data = extractFromHTML(
+  "<html><head><meta property='og:title' content='Hello World' /></head></html>"
+);
+```
+
+## Documentation
+
+### Methods
+
+```ts
+extractFromHTML: (html: string, options?: Options) => ExtractedData;
+```
+
+```ts
+extractFromUrl: (url: string, options?: Options) =>
+  Promise<ExtractedData | null>;
+```
+
+### Types
+
+```ts
 type Options = {
   timeout?: number;
   metaTags?: string[];
@@ -46,9 +79,9 @@ type ExtractedData = {
 };
 ```
 
-## Example Response
+### Example Response
 
-```
+```json
 {
   "og:type": "website",
   "og:url": "https://retool.com/",
@@ -64,55 +97,7 @@ type ExtractedData = {
 }
 ```
 
-## Installation
-
-```bash
-npm install @jcottam/html-metadata
-```
-
-## Integration (ES6)
-
-### Extract tags from a URL
-
-```
-import { extractFromUrl } from "@jcottam/html-metadata";
-
-const data = await extractFromUrl("https://www.yahoo.com");
-```
-
-### Extract tags from an HTML string
-
-Useful in serverless environments like Cloudflare Workers.
-
-```
-import { extractFromHTML } from "@jcottam/html-metadata";
-
-const data = extractFromHTML("<html><head><meta property='og:title' content='Hello World' /></head></html>");
-```
-
-## Integration (CommonJS)
-
-### Extract tags from a URL
-
-```
-const { extractFromUrl } = require("@jcottam/html-metadata");
-
-extractFromUrl("https://www.yahoo.com").then((data) => console.log(data));
-```
-
-### Extract tags from an HTML string
-
-Useful in serverless environments like Cloudflare Workers where passing a `Response` object is required.
-
-```
-const { extractFromHTML } = require("@jcottam/html-metadata");
-
-const data = extractFromHTML(
-  "<html><head><meta property='og:title' content='Hello World' /></head></html>"
-);
-```
-
-## CORS issues (when using library in the browser)
+### CORS issues (when using the library in the browser)
 
 To circumvent CORS (Cross-Origin Resource Sharing) issues, one approach is to execute the extractFromUrl function from a server-side environment. Alternatively, if you are working in a browser-based setting, you can proxy the request through a free service such as allorigins.win.
 
@@ -141,7 +126,7 @@ Click on the "Fork" button in the top right corner of the repository page. This 
 
 ### Cloning the Forked Repository
 
-```bash
+```sh
 git clone https://github.com/your-username/@jcottam/html-metadata.git
 ```
 
@@ -149,7 +134,7 @@ git clone https://github.com/your-username/@jcottam/html-metadata.git
 
 Create a new branch to work on your changes:
 
-```bash
+```sh
 git checkout -b feature-branch
 ```
 
@@ -157,14 +142,14 @@ Make your desired changes to the codebase, documentation, or any other relevant 
 
 #### Build
 
-```
+```sh
 npm install
 npm run build
 ```
 
 #### Test
 
-```
+```sh
 npm run test
 ```
 
@@ -172,19 +157,19 @@ npm run test
 
 1. Stage the changes you have made:
 
-```bash
+```sh
 git add .
 ```
 
 2. Commit the staged changes with a descriptive message:
 
-```bash
+```sh
 git commit -m "Add feature XYZ"
 ```
 
 ### Pushing Changes
 
-```bash
+```sh
 git push origin feature-branch
 ```
 

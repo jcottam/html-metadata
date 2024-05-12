@@ -40,7 +40,7 @@ npm install @jcottam/html-metadata
 ```ts
 const { extractFromUrl } = require("@jcottam/html-metadata")
 
-extractFromUrl("https://www.yahoo.com").then((data) => console.log(data))
+extractFromUrl("https://www.retool.com").then((data) => console.log(data))
 ```
 
 ### Extract tags from an HTML string

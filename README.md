@@ -36,9 +36,9 @@ npm install @jcottam/html-metadata
 ### Extract tags from a URL
 
 ```ts
-const { extractFromUrl } = require("@jcottam/html-metadata");
+const { extractFromUrl } = require("@jcottam/html-metadata")
 
-extractFromUrl("https://www.yahoo.com").then((data) => console.log(data));
+extractFromUrl("https://www.yahoo.com").then((data) => console.log(data))
 ```
 
 ### Extract tags from an HTML string
@@ -46,11 +46,11 @@ extractFromUrl("https://www.yahoo.com").then((data) => console.log(data));
 Useful in serverless environments like Cloudflare Workers where server-side fetches and `Response` objects are at play.
 
 ```ts
-const { extractFromHTML } = require("@jcottam/html-metadata");
+const { extractFromHTML } = require("@jcottam/html-metadata")
 
 const data = extractFromHTML(
   "<html><head><meta property='og:title' content='Hello World' /></head></html>"
-);
+)
 ```
 
 ## Documentation
@@ -58,25 +58,25 @@ const data = extractFromHTML(
 ### Methods
 
 ```ts
-extractFromHTML: (html: string, options?: Options) => ExtractedData;
+extractFromHTML: (html: string, options?: Options) => ExtractedData
 ```
 
 ```ts
 extractFromUrl: (url: string, options?: Options) =>
-  Promise<ExtractedData | null>;
+  Promise<ExtractedData | null>
 ```
 
 ### Types
 
 ```ts
 type Options = {
-  timeout?: number;
-  metaTags?: string[];
-};
+  timeout?: number
+  metaTags?: string[]
+}
 
 type ExtractedData = {
-  [key: string]: string;
-};
+  [key: string]: string
+}
 ```
 
 ### Example Response

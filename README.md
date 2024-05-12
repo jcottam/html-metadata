@@ -4,7 +4,9 @@
 [![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/ISC_license)
 [![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.johnryancottam.com)
 
-The `@jcottam/html-metadata` module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs. These tags provide structured metadata for webpages, particularly useful for social media sharing and SEO. Both tags improve visibility and appearance on social media and search engines.
+This versatile JavaScript library simplifies the extraction of [HTML meta](https://www.w3schools.com/tags/tag_meta.asp) and [Open Graph](https://ogp.me/) tags from HTML content or URLs. These tags provide structured metadata for webpages, particularly useful for social media sharing and SEO. Both tags improve visibility and appearance on social media and search engines.
+
+Compatible with both server and browser environments, supporting ES6 and CommonJS, this open-source project welcomes contributions. Experience the convenience and efficiency of `@jcottam/html-metadata` in optimizing your web applications today!
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -15,13 +17,13 @@ To report a bug or request a feature please open an issue or pull request in Git
 
 ## Features
 
-- Blazingly fast
-- Works in both Node.js and browser environments
-- Written in TypeScript for type safety
-- Extract HTML Meta and OpenGraph tags from HTML or URLs
-- Parse and retrieve metadata like `og:title`, `og:description`, `og:image`, `favicon`, `title`, etc.
-- Easy integration into web applications
-- Support for error handling and customization
+- Lightning-fast performance for optimal efficiency.
+- Versatile compatibility with both Node.js and web browsers.
+- Developed using TypeScript to ensure robust type safety.
+- Effortlessly extract HTML Meta and OpenGraph tags from HTML code or URLs.
+- Seamlessly parse and access metadata such as `og:title`, `og:description`, `og:image`, `favicon`, and more.
+- Simple integration into web applications for hassle-free implementation.
+- Comprehensive support for error handling and customization options.
 
 ## Installation
 

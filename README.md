@@ -1,20 +1,15 @@
 # HTML Metadata
 
-<!-- ![test coverage](https://img.shields.io/badge/tests-100%-brightgreen) -->
-
-<!-- [![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata.svg)](https://www.npmjs.com/package/@jcottam/html-metadata) -->
-
-[![license](https://img.shields.io/badge/license-ISC-yellow)](https://en.wikipedia.org/wiki/ISC_license)
-[![developed by](https://img.shields.io/badge/developed_by-noteworthy.solutions-purple)](http://www.johnryancottam.com)
-
-<!-- ![build status](https://img.shields.io/badge/build-passing-brightgreen) -->
+[![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata)](https://www.npmjs.com/package/@jcottam/html-metadata)
+[![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/ISC_license)
+[![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.javascriptjohnny.com)
 
 The `@jcottam/html-metadata` module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs. These tags provide structured metadata for webpages, particularly useful for social media sharing and SEO. Both tags improve visibility and appearance on social media and search engines.
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
-![HTML metadata](assets/metadata.png)
+![HTML metadata](https://imagedelivery.net/6poAymKUmuHuReMW_n6-MA/45759903-8755-4aa4-a718-e0176107d800/public)
 
 To report a bug or request a feature please open an issue or pull request in GitHub.
 
@@ -27,6 +22,13 @@ To report a bug or request a feature please open an issue or pull request in Git
 - Parse and retrieve metadata like `og:title`, `og:description`, `og:image`, etc.
 - Easy integration into web applications
 - Support for error handling and customization
+
+## Methods
+
+- extractFromHTML
+- extractFromUrl
+
+## Types
 
 ## Returns
 
@@ -104,11 +106,17 @@ const data = extractFromHTML(
 );
 ```
 
+## CORS issues (when using library in the browser)
+
+To circumvent CORS (Cross-Origin Resource Sharing) issues, one approach is to execute the extractFromUrl function from a server-side environment. Alternatively, if you are working in a browser-based setting, you can proxy the request through a free service such as allorigins.win.
+
+For instance, you can use the following URL format to access the desired resource: https://api.allorigins.win/get?url=https://www.retool.com. This will allow you to retrieve the necessary data without running into CORS restrictions. By leveraging this method, you can effectively work around CORS limitations and access the desired information seamlessly.
+
 ## Third Party Tools
 
 The module utilizes the following third-party tools for testing and functionality:
 
-- [Jest](https://www.npmjs.com/package/jest): A delightful JavaScript testing framework for unit and integration testing.
+- [Vitest](https://vitest.dev/): Next-generation testing framework.
 - [Cheerio](https://www.npmjs.com/package/cheerio): A fast, flexible, and lean implementation of core jQuery designed for server-side Node.js.
 - [Markdwown-Badges](https://ileriayo.github.io/markdown-badges/): Badges for your personal developer branding, profile, and projects.
 <!-- - [Axios](https://www.npmjs.com/package/axios): A promise-based HTTP client for making HTTP requests in Node.js and browser environments. -->

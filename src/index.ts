@@ -1,85 +1,63 @@
-// list of meta properties we want to return
-type OpenGraph = {
-  title?: string;
-  favicon?: string;
-  og_title?: string;
-  og_description?: string;
-  og_image?: string;
-  og_image_type?: string;
-  og_image_width?: string;
-  og_image_height?: string;
-  og_image_alt?: string;
-  og_url?: string;
-  og_site_name?: string;
-  og_type?: string;
-  og_locale?: string;
-  article_publisher?: string;
-  article_published_time?: string;
-  article_modified_time?: string;
-  author?: string;
-  twitterSite?: string;
-  fb_pages?: string;
+const cheerio = require("cheerio");
+
+export type Options = {
+  timeout?: number; // fetch timeout in milliseconds
+  metaTags?: string[]; // list of meta tags to extract
 };
 
-// list of meta properties we want to extract
-const metaProperties = [
-  "og:title",
-  "og:description",
-  "og:image",
-  "og:image:type",
-  "og:image:width",
-  "og:image:height",
-  "og:image:alt",
-  "og:url",
-  "og:site_name",
-  "og:type",
-  "og:locale",
-  "article:publisher",
-  "article:published_time",
-  "article:modified_time",
-  "author",
-  "twitterSite:",
-  "fb:pages",
-];
+const formatKeys = (obj: any) => {
+  return Object.keys(obj).reduce((acc: any, key: string) => {
+    acc[key.replace(":", "_")] = obj[key];
+    return acc;
+  }, {});
+};
 
 // extracts metadata from an HTML string
-export const extractFromHTML = (html: string) => {
-  const cheerio = require("cheerio");
-  // load the HTML content into cheerio
+export const extractFromHTML = (html: string, options?: Options) => {
   const $ = cheerio.load(html);
-
-  // extract meta tags
+  const output: any = {};
   const meta = $("meta").toArray();
-
-  // loop through meta tags and extract the ones we want
-  const output: OpenGraph = {};
-  if ($("title").text()) output.title = $("title").text();
-  if ($('link[rel="icon"]').attr("href"))
-    output.favicon = $('link[rel="icon"]').attr("href");
+  output.favicon = $('link[rel="icon"]').attr("href");
   meta.forEach((tag: any) => {
+    const name = $(tag).attr("name");
     const property = $(tag).attr("property");
-    if (property && metaProperties.includes(property)) {
-      output[
-        property.replace(/:/g, "_").replace(/-/g, "_") as keyof OpenGraph
-      ] = $(tag).attr("content");
-    }
+    if (name) output[name] = $(tag).attr("content");
+    if (property) output[property] = $(tag).attr("content");
   });
 
-  // return object or null if object is empty
-  return Object.keys(output).length > 0 ? output : null;
+  if (options?.metaTags) {
+    const filteredOutput = options.metaTags.reduce((acc: any, tag: string) => {
+      if (output[tag]) {
+        acc[tag] = output[tag];
+      }
+      return acc;
+    }, {});
+    return formatKeys(filteredOutput);
+  }
+
+  return formatKeys(output);
 };
 
 // extracts metadata from a URL
-export const extractFromUrl = async (url: string) => {
-  // construct CORS header options
-  const headers = new Headers();
-  headers.append("Content-Type", "text/html");
-  headers.append("Access-Control-Allow-Origin", "*");
-
-  const response = await fetch(url, { headers });
-  if (!response.ok) {
-    return null;
-  }
-  const html = await response.text();
-  return extractFromHTML(html);
+export const extractFromUrl = async (url: string, options?: Options) => {
+  return new Promise((resolve, reject) => {
+    if (options?.timeout) {
+      setTimeout(() => {
+        // timed out, returning null
+        resolve(null);
+      }, options.timeout);
+    }
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          resolve(null);
+        }
+        response.text().then((html) => {
+          resolve(extractFromHTML(html, options));
+        });
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
 };

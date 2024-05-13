@@ -3,7 +3,7 @@
   "description": "This module module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs.",
   "version": "1.0.9",
   "author": "John Ryan Cottam <https//www.johnryancottam.com>",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {

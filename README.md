@@ -8,20 +8,20 @@ This versatile JavaScript library simplifies the extraction of [HTML meta](https
 
 Compatible with both server and browser environments, supporting ES6 and CommonJS, this open-source project welcomes contributions. Experience the convenience and efficiency of `@jcottam/html-metadata` in optimizing your web applications today!
 
+If you have found a bug, please report it by [filing an issue](https://github.com/jcottam/html-metadata/issues). If you are interested in contributing to this project, please refer to the guidelines outlined in the [contributing](#contributing) section.
+
+![NodeJS](https://img.shields.io/badge/server-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/browser-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 ![HTML metadata](https://imagedelivery.net/6poAymKUmuHuReMW_n6-MA/45759903-8755-4aa4-a718-e0176107d800/public)
-
-To report a bug or request a feature please open an issue or pull request in GitHub.
 
 ## Features
 
 - Lightning-fast performance for optimal efficiency.
 - Versatile compatibility with both Node.js and web browsers.
-- Developed using TypeScript to ensure robust type safety.
-- Effortlessly extract HTML Meta and OpenGraph tags from HTML code or URLs.
+- Effortlessly extract [HTML meta](https://www.w3schools.com/tags/tag_meta.asp) and [Open Graph](https://ogp.me/) tags from HTML code or URLs.
 - Seamlessly parse and access metadata such as `og:title`, `og:description`, `og:image`, `favicon`, and more.
+- Developed using TypeScript to ensure robust type safety.
 - Simple integration into web applications for hassle-free implementation.
 - Comprehensive support for error handling and customization options.
 

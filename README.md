@@ -8,8 +8,6 @@ This versatile JavaScript library simplifies the extraction of [HTML meta](https
 
 Compatible with both server and browser environments, supporting ES6 and CommonJS, this open-source project welcomes contributions. Experience the convenience and efficiency of `@jcottam/html-metadata` in optimizing your web applications today!
 
-If you have found a bug, please report it by [filing an issue](https://github.com/jcottam/html-metadata/issues). If you are interested in contributing to this project, please refer to the guidelines outlined in the [contributing](#contributing) section.
-
 ![NodeJS](https://img.shields.io/badge/server-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/browser-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
@@ -24,6 +22,8 @@ If you have found a bug, please report it by [filing an issue](https://github.co
 - Developed using TypeScript to ensure robust type safety.
 - Simple integration into web applications for hassle-free implementation.
 - Comprehensive support for error handling and customization options.
+
+Please report bugs by [filing an issue](https://github.com/jcottam/html-metadata/issues). Contribute to the project by following the guidelines outlined in the [contributing](#contributing) section.
 
 ## Installation
 

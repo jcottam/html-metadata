@@ -1,19 +1,21 @@
 # HTML Metadata
 
 [![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata)](https://www.npmjs.com/package/@jcottam/html-metadata)
-[![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/ISC_license)
+[![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/MIT_license)
 [![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.johnryancottam.com)
 
-This versatile JavaScript library simplifies the extraction of [HTML meta](https://www.w3schools.com/tags/tag_meta.asp) and [Open Graph](https://ogp.me/) tags from HTML content or URLs. These tags provide structured metadata for webpages, particularly useful for social media sharing and SEO. Both tags improve visibility and appearance on social media and search engines.
+`@jcottam/html-metadata` is a JavaScript library that simplifies the extraction of [HTML meta](https://www.w3schools.com/tags/tag_meta.asp) and [Open Graph](https://ogp.me/) tags from HTML content or URLs. These tags provide structured metadata for webpages, useful for social media sharing and SEO purposes.
 
-Compatible with both server and browser environments, supporting ES6 and CommonJS, this open-source project welcomes contributions. Experience the convenience and efficiency of `@jcottam/html-metadata` in optimizing your web applications today!
+The library is compatible with both server and browser environments, supporting ES6 and CommonJS module systems. ES6 modules are suitable for modern browsers, while CommonJS modules are commonly used in server-side JavaScript environments like Node.js.
 
-![NodeJS](https://img.shields.io/badge/server-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/browser-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+Contributions to this open-source project are welcome.
 
 ![HTML metadata](https://imagedelivery.net/6poAymKUmuHuReMW_n6-MA/45759903-8755-4aa4-a718-e0176107d800/public)
 
 ## Features
+
+![NodeJS](https://img.shields.io/badge/server-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/browser-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 - Lightning-fast performance for optimal efficiency.
 - Versatile compatibility with both Node.js and web browsers.

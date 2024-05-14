@@ -14,7 +14,19 @@
     "url": "https://github.com/jcottam/html-metadata/issues"
   },
   "homepage": "https://github.com/jcottam/html-metadata#readme",
-  "keywords": [],
+  "keywords": [
+    "social",
+    "metadata",
+    "parser",
+    "cheerio",
+    "seo",
+    "open-graph",
+    "scrape",
+    "og-tags",
+    "webpage-scraper",
+    "html-metadata",
+    "html-meta-tags"
+  ],
   "scripts": {
     "build": "rm -rf dist && rollup --config",
     "test": "vitest",

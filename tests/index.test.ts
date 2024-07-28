@@ -3,15 +3,13 @@ import { extractFromUrl, extractFromHTML } from "../src/index"
 import { Options } from "../src/index"
 
 describe("extractFromUrl", () => {
-  test("return metadata", async () => {
+  test("return metadata from URL", async () => {
     const url = "https://retool.com"
     const options: Options = {
       metaTags: ["title", "favicon", "og:title", "og:description", "og:image"],
     }
     const data = await extractFromUrl(url, options)
-    console.log("data: ", data)
-    expect(data).toBeInstanceOf(Object)
-    expect(data).not.toBeNull()
+    expect(data?.title).toContain("Retool")
   })
 
   test("return null if no metadata or web page is found", async () => {

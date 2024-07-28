@@ -1,4 +1,4 @@
-const cheerio = require("cheerio")
+import * as cheerio from "cheerio"
 
 export type Options = {
   timeout?: number // fetch timeout in milliseconds
@@ -18,13 +18,13 @@ export const extractFromHTML = (
   const output: ExtractedData = {}
   try {
     const meta = $("meta").toArray() || undefined
-    output.title = $("title").text() || undefined
-    output.favicon = $('link[rel="icon"]').attr("href")
+    output.title = $("title").text() || ""
+    output.favicon = $('link[rel="icon"]').attr("href") || ""
     meta.forEach((tag: any) => {
       const name = $(tag).attr("name")
       const property = $(tag).attr("property")
-      if (name) output[name] = $(tag).attr("content")
-      if (property) output[property] = $(tag).attr("content")
+      if (name) output[name] = $(tag).attr("content") || ""
+      if (property) output[property] = $(tag).attr("content") || ""
     })
 
     if (options?.metaTags) {

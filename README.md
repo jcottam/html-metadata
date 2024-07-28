@@ -80,7 +80,7 @@ type Options = {
 
 ### CORS
 
-To avoid CORS issues in browsers, run `extractFromUrl` on the server or use a proxy like [AllOrigins](https://api.allorigins.win).
+To bypass CORS in browsers, run `extractFromUrl` on a server or use a proxy like [AllOrigins](https://api.allorigins.win).
 
 ## Third Party Tools
 

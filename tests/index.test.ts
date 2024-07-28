@@ -24,6 +24,8 @@ describe("extractFromHTML", () => {
       "<html><head><meta property='og:title' content='Hello World' /><meta property='og:description' content='This is a test' /></head></html>"
     )
     expect(data).toEqual({
+      title: "",
+      favicon: "",
       "og:title": "Hello World",
       "og:description": "This is a test",
     })

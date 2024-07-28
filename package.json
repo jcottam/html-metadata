@@ -1,7 +1,7 @@
 {
   "name": "@jcottam/html-metadata",
-  "description": "This module module is a JavaScript library that simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs.",
-  "version": "2.0.2",
+  "description": "This JavaScript library simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs.",
+  "version": "2.0.4",
   "author": "John Ryan Cottam <https//www.johnryancottam.com>",
   "license": "MIT",
   "main": "dist/index.js",

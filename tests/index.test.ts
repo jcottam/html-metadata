@@ -4,20 +4,13 @@ import { Options } from "../src/index"
 
 describe("extractFromUrl", () => {
   test("return metadata from URL", async () => {
-    const url = "https://retool.com"
+    const url = "https://alpine-suites.com"
     const options: Options = {
-      metaTags: [
-        "lang",
-        "title",
-        "favicon",
-        "og:title",
-        "og:description",
-        "og:image",
-      ],
+      metaTags: ["lang", "title", "og:image"],
     }
     const data = await extractFromUrl(url, options)
     console.log("data: ", data)
-    expect(data?.title).toContain("Retool")
+    expect(data?.title).toContain("Alpine Village Suites")
   })
 
   test("return null if no metadata or web page is found", async () => {

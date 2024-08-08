@@ -6,9 +6,17 @@ describe("extractFromUrl", () => {
   test("return metadata from URL", async () => {
     const url = "https://retool.com"
     const options: Options = {
-      metaTags: ["title", "favicon", "og:title", "og:description", "og:image"],
+      metaTags: [
+        "lang",
+        "title",
+        "favicon",
+        "og:title",
+        "og:description",
+        "og:image",
+      ],
     }
     const data = await extractFromUrl(url, options)
+    console.log("data: ", data)
     expect(data?.title).toContain("Retool")
   })
 

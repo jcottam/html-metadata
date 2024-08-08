@@ -1,7 +1,7 @@
 {
   "name": "@jcottam/html-metadata",
   "description": "This JavaScript library simplifies the extraction of HTML Meta and OpenGraph tags from HTML content or URLs.",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "author": "John Ryan Cottam <https//www.johnryancottam.com>",
   "license": "MIT",
   "main": "dist/index.cjs.js",

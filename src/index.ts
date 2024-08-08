@@ -18,6 +18,7 @@ export const extractFromHTML = (
   const output: ExtractedData = {}
   try {
     const meta = $("meta").toArray() || undefined
+    output.lang = $("html").attr("lang") || ""
     output.title = $("title").text() || ""
     output.favicon = $('link[rel="icon"]').attr("href") || ""
     meta.forEach((tag: any) => {

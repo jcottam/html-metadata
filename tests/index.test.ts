@@ -21,9 +21,10 @@ describe("extractFromUrl", () => {
 describe("extractFromHTML", () => {
   test("return metadata from HTML string", () => {
     const data = extractFromHTML(
-      "<html><head><meta property='og:title' content='Hello World' /><meta property='og:description' content='This is a test' /></head></html>"
+      "<html lang='en'><head><meta property='og:title' content='Hello World' /><meta property='og:description' content='This is a test' /></head></html>"
     )
     expect(data).toEqual({
+      lang: "en",
       title: "",
       favicon: "",
       "og:title": "Hello World",

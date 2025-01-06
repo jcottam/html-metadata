@@ -6,11 +6,13 @@ describe("extractFromUrl", () => {
   test("return metadata from URL", async () => {
     const url = "https://alpine-suites.com"
     const options: Options = {
-      metaTags: ["lang", "title", "og:image"],
+      metaTags: ["lang", "title", "og:image", "favicon"],
     }
     const data = await extractFromUrl(url, options)
     console.log("data: ", data)
     expect(data?.title).toContain("Alpine Village Suites")
+    expect(data?.favicon).toBeTruthy()
+    expect(data?.favicon).toMatch(/^\/.*|https?:\/\/.*/)
   })
 
   test("return null if no metadata or web page is found", async () => {

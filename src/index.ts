@@ -12,7 +12,7 @@ export type ExtractedData = {
 // extracts metadata from an HTML string, returns an object of key-value pairs
 export const extractFromHTML = (
   html: string,
-  options?: Options
+  options?: Options & { baseUrl?: string }
 ): ExtractedData => {
   const $ = cheerio.load(html)
   const output: ExtractedData = {}
@@ -20,7 +20,14 @@ export const extractFromHTML = (
     const meta = $("meta").toArray() || undefined
     output.lang = $("html").attr("lang") || ""
     output.title = $("title").text() || ""
-    output.favicon = $('link[rel="icon"]').attr("href") || ""
+    const faviconHref = $('link[rel*="icon"]').attr("href") || ""
+    output.favicon = faviconHref
+      ? faviconHref.startsWith("http")
+        ? faviconHref
+        : options?.baseUrl
+        ? new URL(faviconHref, options.baseUrl).href
+        : faviconHref
+      : ""
     meta.forEach((tag: any) => {
       const name = $(tag).attr("name")
       const property = $(tag).attr("property")
@@ -65,7 +72,7 @@ export const extractFromUrl = async (
           resolve(null)
         }
         response.text().then((html) => {
-          resolve(extractFromHTML(html, options))
+          resolve(extractFromHTML(html, { ...options, baseUrl: url }))
         })
       })
       .catch((error) => {

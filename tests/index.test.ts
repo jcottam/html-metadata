@@ -5,11 +5,11 @@ import { Options } from "../src/index"
 describe("extractFromUrl", () => {
   test("return metadata from URL", async () => {
     const url = "https://alpine-suites.com"
-    const options: Options = {
-      metaTags: ["lang", "title", "og:image", "favicon"],
+    let options: Options = {
+      metaTags: ["lang", "title", "og:image", "favicon", "apple-touch-icon"],
     }
     const data = await extractFromUrl(url, options)
-    // console.log("data: ", data)
+    console.log("data: ", data)
     expect(data?.title).toContain("Alpine Village Suites")
     expect(data?.favicon).toBeTruthy()
     expect(data?.favicon).toMatch(/^\/.*|https?:\/\/.*/)
@@ -31,7 +31,7 @@ describe("extractFromHTML", () => {
       lang: "en",
       title: "",
       favicon: "",
-      appleTouchIcon: "",
+      "apple-touch-icon": "",
       "og:title": "Hello World",
       "og:description": "This is a test",
     })

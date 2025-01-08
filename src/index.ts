@@ -33,7 +33,7 @@ export const extractFromHTML = (
     // extract apple-touch-icon
     const appleTouchIconHref =
       $('link[rel*="apple-touch-icon"]').attr("href") || ""
-    output.appleTouchIcon = appleTouchIconHref
+    output["apple-touch-icon"] = appleTouchIconHref
       ? appleTouchIconHref.startsWith("http")
         ? appleTouchIconHref
         : options?.baseUrl
@@ -85,7 +85,12 @@ export const extractFromUrl = async (
           resolve(null)
         }
         response.text().then((html) => {
-          resolve(extractFromHTML(html, { ...options, baseUrl: url }))
+          resolve(
+            extractFromHTML(html, {
+              ...options,
+              baseUrl: options?.baseUrl || url,
+            })
+          )
         })
       })
       .catch((error) => {

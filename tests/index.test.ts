@@ -9,7 +9,7 @@ describe("extractFromUrl", () => {
       metaTags: ["lang", "title", "og:image", "favicon"],
     }
     const data = await extractFromUrl(url, options)
-    console.log("data: ", data)
+    // console.log("data: ", data)
     expect(data?.title).toContain("Alpine Village Suites")
     expect(data?.favicon).toBeTruthy()
     expect(data?.favicon).toMatch(/^\/.*|https?:\/\/.*/)
@@ -26,10 +26,12 @@ describe("extractFromHTML", () => {
     const data = extractFromHTML(
       "<html lang='en'><head><meta property='og:title' content='Hello World' /><meta property='og:description' content='This is a test' /></head></html>"
     )
+    // console.log("data: ", data)
     expect(data).toEqual({
       lang: "en",
       title: "",
       favicon: "",
+      appleTouchIcon: "",
       "og:title": "Hello World",
       "og:description": "This is a test",
     })

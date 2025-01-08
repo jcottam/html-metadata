@@ -20,13 +20,24 @@ export const extractFromHTML = (
     const meta = $("meta").toArray() || undefined
     output.lang = $("html").attr("lang") || ""
     output.title = $("title").text() || ""
-    const faviconHref = $('link[rel*="icon"]').attr("href") || ""
+    // extract favicon, .ico file
+    const faviconHref = $("link[rel*='icon']").attr("href") || ""
     output.favicon = faviconHref
       ? faviconHref.startsWith("http")
         ? faviconHref
         : options?.baseUrl
         ? new URL(faviconHref, options.baseUrl).href
         : faviconHref
+      : ""
+    // extract apple-touch-icon
+    const appleTouchIconHref =
+      $('link[rel*="apple-touch-icon"]').attr("href") || ""
+    output.appleTouchIcon = appleTouchIconHref
+      ? appleTouchIconHref.startsWith("http")
+        ? appleTouchIconHref
+        : options?.baseUrl
+        ? new URL(appleTouchIconHref, options.baseUrl).href
+        : appleTouchIconHref
       : ""
     meta.forEach((tag: any) => {
       const name = $(tag).attr("name")

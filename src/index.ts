@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio"
 
 export type Options = {
+  baseUrl?: string // base URL for relative links
   timeout?: number // fetch timeout in milliseconds
   metaTags?: string[] // list of meta tags to extract
 }
@@ -12,7 +13,7 @@ export type ExtractedData = {
 // extracts metadata from an HTML string, returns an object of key-value pairs
 export const extractFromHTML = (
   html: string,
-  options?: Options & { baseUrl?: string }
+  options?: Options | undefined
 ): ExtractedData => {
   const $ = cheerio.load(html)
   const output: ExtractedData = {}
@@ -39,6 +40,7 @@ export const extractFromHTML = (
         ? new URL(appleTouchIconHref, options.baseUrl).href
         : appleTouchIconHref
       : ""
+    // extract meta tags
     meta.forEach((tag: any) => {
       const name = $(tag).attr("name")
       const property = $(tag).attr("property")

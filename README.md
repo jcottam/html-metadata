@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/%40jcottam%2Fhtml-metadata)](https://www.npmjs.com/package/@jcottam/html-metadata)
 [![license](https://img.shields.io/npm/l/%40jcottam%2Fhtml-metadata)](https://en.wikipedia.org/wiki/MIT_license)
-[![developed by](https://img.shields.io/badge/developed_by-javascript.johnny-white)](http://www.johnryancottam.com)
+[![developed by](https://img.shields.io/badge/developed_by-jcottam-white)](http://www.johnryancottam.com)
 
 `@jcottam/html-metadata` is a JavaScript library for easy extraction of HTML meta and Open Graph tags from HTML content or URLs. It is useful for social media sharing and SEO.
 

@@ -12,6 +12,6 @@
     "vite": "^5.3.4"
   },
   "dependencies": {
-    "@jcottam/html-metadata": "^2.0.4"
+    "@jcottam/html-metadata": "^3.0.3"
   }
 }

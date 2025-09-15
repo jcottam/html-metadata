@@ -217,7 +217,7 @@ The library extracts the following types of metadata:
 ### Prerequisites
 
 - Node.js 16+
-- npm or yarn
+- npm
 
 ### Setup
 
@@ -270,13 +270,3 @@ We welcome contributions! Please follow these guidelines:
 ## License
 
 MIT License - see [LICENSE.md](LICENSE.md) for details.
-
-## Changelog
-
-### v3.0.3
-
-- Updated dependencies to latest versions
-- Enhanced TypeScript type definitions
-- Added comprehensive test coverage
-- Improved error handling and documentation
-- Added JSDoc comments for better IDE support

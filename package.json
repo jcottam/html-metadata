@@ -16,15 +16,11 @@
   },
   "homepage": "https://github.com/jcottam/html-metadata#readme",
   "keywords": [
-    "social",
     "metadata",
-    "parser",
     "cheerio",
     "seo",
     "open-graph",
-    "scrape",
     "og-tags",
-    "webpage-scraper",
     "html-metadata",
     "html-meta-tags"
   ],

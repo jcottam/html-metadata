@@ -74,11 +74,6 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             npm run release -- ${{ github.event.inputs.version_type }}
           else
-            # Check if there are changes that warrant a release
-            if git diff --quiet HEAD~1 HEAD -- src/ package.json; then
-              echo "No significant changes detected, skipping release"
-              exit 0
-            fi
             npm run release -- patch
           fi
         env:

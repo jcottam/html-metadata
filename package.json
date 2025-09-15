@@ -48,9 +48,7 @@
   },
   "release-it": {
     "github": {
-      "release": true,
-      "releaseName": "Release ${version}",
-      "releaseNotes": "See [CHANGELOG.md](https://github.com/jcottam/html-metadata/blob/main/CHANGELOG.md) for details."
+      "release": true
     },
     "npm": {
       "publish": true
@@ -59,12 +57,7 @@
       "before:init": [
         "npm test"
       ],
-      "after:bump": "npm run build",
-      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-    },
-    "git": {
-      "commitMessage": "chore: release v${version}",
-      "tagName": "v${version}"
+      "after:bump": "npm run build"
     }
   },
   "dependencies": {

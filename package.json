@@ -15,6 +15,9 @@
     "url": "https://github.com/jcottam/html-metadata/issues"
   },
   "homepage": "https://github.com/jcottam/html-metadata#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [
     "metadata",
     "cheerio",
@@ -26,12 +29,13 @@
   ],
   "scripts": {
     "build": "rm -rf dist && rollup --config",
-    "test": "vitest",
+    "test": "vitest --run",
     "release": "release-it"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",

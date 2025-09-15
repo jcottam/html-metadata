@@ -216,7 +216,7 @@ The library extracts the following types of metadata:
 
 ### Prerequisites
 
-- Node.js 16+
+- Node.js 18+
 - npm
 
 ### Setup

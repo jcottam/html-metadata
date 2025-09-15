@@ -232,8 +232,16 @@ npm install
 ```bash
 npm run build    # Build the library
 npm test         # Run tests
-npm run release  # Release new version
+npm run release  # Release new version (manual)
 ```
+
+### Automated Workflow
+
+This project uses automated dependency management and releases:
+
+- **Renovate Bot**: Automatically updates dependencies and creates pull requests
+- **GitHub Actions**: Automatically releases new versions when changes are pushed to main
+- **Manual Release**: Use `npm run release` for immediate releases or specific version bumps
 
 ### Testing
 
